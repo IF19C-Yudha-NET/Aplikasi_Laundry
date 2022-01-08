@@ -73,6 +73,7 @@ namespace Aplikasi_Laundry
             this.btrefresh.TabIndex = 80;
             this.btrefresh.Text = "Refresh";
             this.btrefresh.UseVisualStyleBackColor = true;
+            this.btrefresh.Click += new System.EventHandler(this.btrefresh_Click);
             // 
             // rdp
             // 
@@ -84,6 +85,7 @@ namespace Aplikasi_Laundry
             this.rdp.TabStop = true;
             this.rdp.Text = "Perempuan";
             this.rdp.UseVisualStyleBackColor = true;
+            this.rdp.CheckedChanged += new System.EventHandler(this.rdp_CheckedChanged);
             // 
             // rdlk
             // 
@@ -95,6 +97,7 @@ namespace Aplikasi_Laundry
             this.rdlk.TabStop = true;
             this.rdlk.Text = "Laki-laki";
             this.rdlk.UseVisualStyleBackColor = true;
+            this.rdlk.CheckedChanged += new System.EventHandler(this.rdlk_CheckedChanged);
             // 
             // label6
             // 
@@ -113,6 +116,7 @@ namespace Aplikasi_Laundry
             this.btreset.TabIndex = 76;
             this.btreset.Text = "Reset";
             this.btreset.UseVisualStyleBackColor = true;
+            this.btreset.Click += new System.EventHandler(this.btreset_Click);
             // 
             // label5
             // 
@@ -157,6 +161,7 @@ namespace Aplikasi_Laundry
             this.bthapus.TabIndex = 71;
             this.bthapus.Text = "Hapus";
             this.bthapus.UseVisualStyleBackColor = true;
+            this.bthapus.Click += new System.EventHandler(this.bthapus_Click);
             // 
             // btubah
             // 
@@ -166,6 +171,7 @@ namespace Aplikasi_Laundry
             this.btubah.TabIndex = 70;
             this.btubah.Text = "Ubah";
             this.btubah.UseVisualStyleBackColor = true;
+            this.btubah.Click += new System.EventHandler(this.btubah_Click);
             // 
             // txnohppen
             // 
@@ -223,6 +229,7 @@ namespace Aplikasi_Laundry
             this.bttambah.TabIndex = 63;
             this.bttambah.Text = "Tambah";
             this.bttambah.UseVisualStyleBackColor = true;
+            this.bttambah.Click += new System.EventHandler(this.bttambah_Click);
             // 
             // txidpen
             // 
@@ -290,6 +297,7 @@ namespace Aplikasi_Laundry
             this.Name = "Pencuci";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pencuci";
+            this.Load += new System.EventHandler(this.Pencuci_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpencuci)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
