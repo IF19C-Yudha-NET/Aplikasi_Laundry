@@ -150,6 +150,7 @@ namespace Aplikasi_Laundry
             this.btcari.TabIndex = 94;
             this.btcari.Text = "Cari";
             this.btcari.UseVisualStyleBackColor = true;
+            this.btcari.Click += new System.EventHandler(this.btcari_Click);
             // 
             // textBox12
             // 
@@ -166,6 +167,7 @@ namespace Aplikasi_Laundry
             this.btreset.TabIndex = 92;
             this.btreset.Text = "Reset";
             this.btreset.UseVisualStyleBackColor = true;
+            this.btreset.Click += new System.EventHandler(this.btreset_Click);
             // 
             // bthapus
             // 
@@ -175,6 +177,7 @@ namespace Aplikasi_Laundry
             this.bthapus.TabIndex = 91;
             this.bthapus.Text = "Hapus";
             this.bthapus.UseVisualStyleBackColor = true;
+            this.bthapus.Click += new System.EventHandler(this.bthapus_Click);
             // 
             // btubah
             // 
@@ -184,6 +187,7 @@ namespace Aplikasi_Laundry
             this.btubah.TabIndex = 90;
             this.btubah.Text = "Ubah";
             this.btubah.UseVisualStyleBackColor = true;
+            this.btubah.Click += new System.EventHandler(this.btubah_Click);
             // 
             // bttambah
             // 
@@ -193,6 +197,7 @@ namespace Aplikasi_Laundry
             this.bttambah.TabIndex = 89;
             this.bttambah.Text = "Tambah";
             this.bttambah.UseVisualStyleBackColor = true;
+            this.bttambah.Click += new System.EventHandler(this.bttambah_Click);
             // 
             // dgvcmasuk
             // 
@@ -331,6 +336,7 @@ namespace Aplikasi_Laundry
             this.cbjenispaket.Name = "cbjenispaket";
             this.cbjenispaket.Size = new System.Drawing.Size(160, 28);
             this.cbjenispaket.TabIndex = 73;
+            this.cbjenispaket.SelectedIndexChanged += new System.EventHandler(this.cbjenispaket_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -351,6 +357,7 @@ namespace Aplikasi_Laundry
             this.rdtidak.TabStop = true;
             this.rdtidak.Text = "Tidak";
             this.rdtidak.UseVisualStyleBackColor = true;
+            this.rdtidak.CheckedChanged += new System.EventHandler(this.rdtidak_CheckedChanged);
             // 
             // rdya
             // 
@@ -362,6 +369,7 @@ namespace Aplikasi_Laundry
             this.rdya.TabStop = true;
             this.rdya.Text = "Ya";
             this.rdya.UseVisualStyleBackColor = true;
+            this.rdya.CheckedChanged += new System.EventHandler(this.rdya_CheckedChanged);
             // 
             // cbjeniscuci
             // 
@@ -373,6 +381,7 @@ namespace Aplikasi_Laundry
             this.cbjeniscuci.Name = "cbjeniscuci";
             this.cbjeniscuci.Size = new System.Drawing.Size(160, 28);
             this.cbjeniscuci.TabIndex = 69;
+            this.cbjeniscuci.SelectedIndexChanged += new System.EventHandler(this.cbjeniscuci_SelectedIndexChanged);
             // 
             // txidpenc
             // 
@@ -493,6 +502,7 @@ namespace Aplikasi_Laundry
             this.Name = "CucianMasuk";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CucianMasuk";
+            this.Load += new System.EventHandler(this.CucianMasuk_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcmasuk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
