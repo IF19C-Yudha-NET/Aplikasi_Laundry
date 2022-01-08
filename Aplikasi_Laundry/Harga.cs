@@ -25,8 +25,7 @@ namespace Aplikasi_Laundry
             fom.Show();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O365U80\SQLEXPRESS;Initial Catalog=Laundry.v2;Integrated Security=True");
-
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-CJNVJPUI;Initial Catalog=Laundry.v2;Integrated Security=True");
         private void showdata()
         {
             con.Open();
@@ -54,6 +53,20 @@ namespace Aplikasi_Laundry
 
         private void Harga_Load(object sender, EventArgs e)
         {
+            showdata();
+        }
+
+        private void btubah_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("update Harga set Harga_paket_kilat=@Harga_paket_kilat,Harga_pewangi=@Harga_pewangi,Harga_jenis_cuci=@Harga_jenis_cuci where Harga_per_kg=@Harga_per_kg", con);
+            cmd.Parameters.AddWithValue("@Harga_per_kg", float.Parse(txhkg.Text));
+            cmd.Parameters.AddWithValue("@Harga_paket_kilat", float.Parse(txhpkilat.Text));
+            cmd.Parameters.AddWithValue("@Harga_pewangi", float.Parse(txhwangi.Text));
+            cmd.Parameters.AddWithValue("@Harga_jenis_cuci", float.Parse(txcsetrika.Text));
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("harga berhasil diubah");
             showdata();
         }
     }
