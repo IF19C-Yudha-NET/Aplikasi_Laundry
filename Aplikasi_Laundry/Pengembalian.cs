@@ -23,5 +23,10 @@ namespace Aplikasi_Laundry
             this.Hide();
             fom.Show();
         }
+
+        private void Pengembalian_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
