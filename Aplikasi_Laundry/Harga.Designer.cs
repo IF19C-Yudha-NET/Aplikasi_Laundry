@@ -50,101 +50,114 @@ namespace Aplikasi_Laundry
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(276, 20);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(368, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(258, 24);
+            this.label2.Size = new System.Drawing.Size(444, 31);
             this.label2.TabIndex = 73;
             this.label2.Text = "PENETAPAN HARGA LAUNDRY";
             // 
             // dgvharga
             // 
             this.dgvharga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvharga.Location = new System.Drawing.Point(52, 306);
+            this.dgvharga.Location = new System.Drawing.Point(69, 382);
+            this.dgvharga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvharga.Name = "dgvharga";
             this.dgvharga.RowHeadersWidth = 62;
             this.dgvharga.RowTemplate.Height = 28;
-            this.dgvharga.Size = new System.Drawing.Size(714, 122);
+            this.dgvharga.Size = new System.Drawing.Size(952, 152);
             this.dgvharga.TabIndex = 72;
             // 
             // txcsetrika
             // 
-            this.txcsetrika.Location = new System.Drawing.Point(232, 206);
+            this.txcsetrika.Location = new System.Drawing.Point(309, 258);
+            this.txcsetrika.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txcsetrika.Name = "txcsetrika";
-            this.txcsetrika.Size = new System.Drawing.Size(100, 26);
+            this.txcsetrika.Size = new System.Drawing.Size(132, 31);
             this.txcsetrika.TabIndex = 71;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 212);
+            this.label1.Location = new System.Drawing.Point(91, 265);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 20);
+            this.label1.Size = new System.Drawing.Size(185, 25);
             this.label1.TabIndex = 70;
             this.label1.Text = "Harga cuci setrika";
             // 
             // txhwangi
             // 
-            this.txhwangi.Location = new System.Drawing.Point(232, 158);
+            this.txhwangi.Location = new System.Drawing.Point(309, 198);
+            this.txhwangi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txhwangi.Name = "txhwangi";
-            this.txhwangi.Size = new System.Drawing.Size(100, 26);
+            this.txhwangi.Size = new System.Drawing.Size(132, 31);
             this.txhwangi.TabIndex = 69;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(68, 165);
+            this.label8.Location = new System.Drawing.Point(91, 206);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(158, 20);
+            this.label8.Size = new System.Drawing.Size(215, 25);
             this.label8.TabIndex = 68;
             this.label8.Text = "Harga diberi pewangi";
             // 
             // txhpkilat
             // 
-            this.txhpkilat.Location = new System.Drawing.Point(232, 112);
+            this.txhpkilat.Location = new System.Drawing.Point(309, 140);
+            this.txhpkilat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txhpkilat.Name = "txhpkilat";
-            this.txhpkilat.Size = new System.Drawing.Size(100, 26);
+            this.txhpkilat.Size = new System.Drawing.Size(132, 31);
             this.txhpkilat.TabIndex = 67;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(68, 118);
+            this.label7.Location = new System.Drawing.Point(91, 148);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 20);
+            this.label7.Size = new System.Drawing.Size(174, 25);
             this.label7.TabIndex = 66;
             this.label7.Text = "Harga paket kilat";
             // 
             // txhkg
             // 
-            this.txhkg.Location = new System.Drawing.Point(232, 69);
+            this.txhkg.Location = new System.Drawing.Point(309, 86);
+            this.txhkg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txhkg.Name = "txhkg";
-            this.txhkg.Size = new System.Drawing.Size(100, 26);
+            this.txhkg.Size = new System.Drawing.Size(132, 31);
             this.txhkg.TabIndex = 65;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(68, 75);
+            this.label6.Location = new System.Drawing.Point(91, 94);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 20);
+            this.label6.Size = new System.Drawing.Size(136, 25);
             this.label6.TabIndex = 64;
             this.label6.Text = "Harga per kg";
             // 
             // bthapus
             // 
-            this.bthapus.Location = new System.Drawing.Point(424, 189);
+            this.bthapus.Location = new System.Drawing.Point(565, 236);
+            this.bthapus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bthapus.Name = "bthapus";
-            this.bthapus.Size = new System.Drawing.Size(92, 42);
+            this.bthapus.Size = new System.Drawing.Size(123, 52);
             this.bthapus.TabIndex = 63;
             this.bthapus.Text = "Hapus";
             this.bthapus.UseVisualStyleBackColor = true;
+            this.bthapus.Click += new System.EventHandler(this.bthapus_Click);
             // 
             // btubah
             // 
-            this.btubah.Location = new System.Drawing.Point(520, 189);
+            this.btubah.Location = new System.Drawing.Point(693, 236);
+            this.btubah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btubah.Name = "btubah";
-            this.btubah.Size = new System.Drawing.Size(92, 42);
+            this.btubah.Size = new System.Drawing.Size(123, 52);
             this.btubah.TabIndex = 62;
             this.btubah.Text = "Ubah";
             this.btubah.UseVisualStyleBackColor = true;
@@ -152,9 +165,10 @@ namespace Aplikasi_Laundry
             // 
             // bttetapkan
             // 
-            this.bttetapkan.Location = new System.Drawing.Point(424, 142);
+            this.bttetapkan.Location = new System.Drawing.Point(565, 178);
+            this.bttetapkan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bttetapkan.Name = "bttetapkan";
-            this.bttetapkan.Size = new System.Drawing.Size(188, 42);
+            this.bttetapkan.Size = new System.Drawing.Size(251, 52);
             this.bttetapkan.TabIndex = 61;
             this.bttetapkan.Text = "Tetapkan harga";
             this.bttetapkan.UseVisualStyleBackColor = true;
@@ -162,9 +176,10 @@ namespace Aplikasi_Laundry
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(2, 2);
+            this.button5.Location = new System.Drawing.Point(3, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(92, 42);
+            this.button5.Size = new System.Drawing.Size(123, 52);
             this.button5.TabIndex = 60;
             this.button5.Text = "Back";
             this.button5.UseVisualStyleBackColor = true;
@@ -173,17 +188,18 @@ namespace Aplikasi_Laundry
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 283);
+            this.label3.Location = new System.Drawing.Point(67, 354);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(221, 20);
+            this.label3.Size = new System.Drawing.Size(289, 25);
             this.label3.TabIndex = 83;
             this.label3.Text = "HARGA YANG DITETAPKAN";
             // 
             // Harga
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 474);
+            this.ClientSize = new System.Drawing.Size(1077, 592);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvharga);
@@ -199,6 +215,7 @@ namespace Aplikasi_Laundry
             this.Controls.Add(this.btubah);
             this.Controls.Add(this.bttetapkan);
             this.Controls.Add(this.button5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Harga";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Harga";

@@ -69,5 +69,25 @@ namespace Aplikasi_Laundry
             MessageBox.Show("harga berhasil diubah");
             showdata();
         }
+
+        private void bthapus_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("delete Harga where Harga_per_kg=@Harga_per_kg", con);
+                cmd.Parameters.AddWithValue("@Harga_per_kg", txhkg.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("harga berhasil dihapus");
+                showdata();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("tidak bisa menghapus harga!!!" +
+                                "\nkarena didatabase harga sudah terisi" +
+                                "\nharap hapus dulu data di cucian masuk");
+            }
+        }
     }
 }
