@@ -17,8 +17,7 @@ namespace Aplikasi_Laundry
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-CJNVJPUI;Initial Catalog=Laundry.v2;Integrated Security=True");
-
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O365U80\SQLEXPRESS;Initial Catalog=Laundry.v2;Integrated Security=True");
         private void showdata()
         {
             con.Open();
@@ -112,7 +111,20 @@ namespace Aplikasi_Laundry
         private void btrefresh_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Konsumen where Id_pelanggan=@Id_pelanggan", con);
+            SqlCommand cmd = new SqlCommand("select * from Konsumen", con);
+        
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dgvkonsumen.DataSource = dt;
+            con.Close();
+        }
+
+        private void btcari_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from Konsumen where Id_pelanggan=@Id_pelanggan",con);
             cmd.Parameters.AddWithValue("@Id_pelanggan", txcari.Text);
             cmd.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

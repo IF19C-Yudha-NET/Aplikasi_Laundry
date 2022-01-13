@@ -66,7 +66,7 @@ namespace Aplikasi_Laundry
             // btrefresh
             // 
             this.btrefresh.Location = new System.Drawing.Point(130, 296);
-            this.btrefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btrefresh.Margin = new System.Windows.Forms.Padding(2);
             this.btrefresh.Name = "btrefresh";
             this.btrefresh.Size = new System.Drawing.Size(61, 27);
             this.btrefresh.TabIndex = 76;
@@ -77,7 +77,7 @@ namespace Aplikasi_Laundry
             // btreset
             // 
             this.btreset.Location = new System.Drawing.Point(55, 296);
-            this.btreset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btreset.Margin = new System.Windows.Forms.Padding(2);
             this.btreset.Name = "btreset";
             this.btreset.Size = new System.Drawing.Size(61, 27);
             this.btreset.TabIndex = 75;
@@ -88,7 +88,7 @@ namespace Aplikasi_Laundry
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(1, 2);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(61, 27);
             this.button5.TabIndex = 74;
@@ -109,17 +109,18 @@ namespace Aplikasi_Laundry
             // btcari
             // 
             this.btcari.Location = new System.Drawing.Point(665, 56);
-            this.btcari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btcari.Margin = new System.Windows.Forms.Padding(2);
             this.btcari.Name = "btcari";
             this.btcari.Size = new System.Drawing.Size(51, 26);
             this.btcari.TabIndex = 72;
             this.btcari.Text = "Cari";
             this.btcari.UseVisualStyleBackColor = true;
+            this.btcari.Click += new System.EventHandler(this.btcari_Click);
             // 
             // txcari
             // 
             this.txcari.Location = new System.Drawing.Point(594, 60);
-            this.txcari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txcari.Margin = new System.Windows.Forms.Padding(2);
             this.txcari.Name = "txcari";
             this.txcari.Size = new System.Drawing.Size(68, 20);
             this.txcari.TabIndex = 71;
@@ -128,7 +129,7 @@ namespace Aplikasi_Laundry
             // 
             this.dgvkonsumen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvkonsumen.Location = new System.Drawing.Point(287, 86);
-            this.dgvkonsumen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvkonsumen.Margin = new System.Windows.Forms.Padding(2);
             this.dgvkonsumen.Name = "dgvkonsumen";
             this.dgvkonsumen.RowHeadersWidth = 62;
             this.dgvkonsumen.RowTemplate.Height = 28;
@@ -138,7 +139,7 @@ namespace Aplikasi_Laundry
             // bthapus
             // 
             this.bthapus.Location = new System.Drawing.Point(205, 253);
-            this.bthapus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bthapus.Margin = new System.Windows.Forms.Padding(2);
             this.bthapus.Name = "bthapus";
             this.bthapus.Size = new System.Drawing.Size(61, 27);
             this.bthapus.TabIndex = 69;
@@ -149,7 +150,7 @@ namespace Aplikasi_Laundry
             // btubah
             // 
             this.btubah.Location = new System.Drawing.Point(130, 253);
-            this.btubah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btubah.Margin = new System.Windows.Forms.Padding(2);
             this.btubah.Name = "btubah";
             this.btubah.Size = new System.Drawing.Size(61, 27);
             this.btubah.TabIndex = 68;
@@ -160,7 +161,7 @@ namespace Aplikasi_Laundry
             // txnohp
             // 
             this.txnohp.Location = new System.Drawing.Point(109, 197);
-            this.txnohp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txnohp.Margin = new System.Windows.Forms.Padding(2);
             this.txnohp.Name = "txnohp";
             this.txnohp.Size = new System.Drawing.Size(158, 20);
             this.txnohp.TabIndex = 67;
@@ -168,7 +169,7 @@ namespace Aplikasi_Laundry
             // txalamat
             // 
             this.txalamat.Location = new System.Drawing.Point(109, 155);
-            this.txalamat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txalamat.Margin = new System.Windows.Forms.Padding(2);
             this.txalamat.Name = "txalamat";
             this.txalamat.Size = new System.Drawing.Size(158, 20);
             this.txalamat.TabIndex = 66;
@@ -176,7 +177,7 @@ namespace Aplikasi_Laundry
             // txnama
             // 
             this.txnama.Location = new System.Drawing.Point(109, 118);
-            this.txnama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txnama.Margin = new System.Windows.Forms.Padding(2);
             this.txnama.Name = "txnama";
             this.txnama.Size = new System.Drawing.Size(158, 20);
             this.txnama.TabIndex = 65;
@@ -214,7 +215,7 @@ namespace Aplikasi_Laundry
             // bttambah
             // 
             this.bttambah.Location = new System.Drawing.Point(55, 253);
-            this.bttambah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttambah.Margin = new System.Windows.Forms.Padding(2);
             this.bttambah.Name = "bttambah";
             this.bttambah.Size = new System.Drawing.Size(61, 27);
             this.bttambah.TabIndex = 61;
@@ -225,7 +226,7 @@ namespace Aplikasi_Laundry
             // txid
             // 
             this.txid.Location = new System.Drawing.Point(109, 82);
-            this.txid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txid.Margin = new System.Windows.Forms.Padding(2);
             this.txid.Name = "txid";
             this.txid.Size = new System.Drawing.Size(68, 20);
             this.txid.TabIndex = 60;
@@ -275,7 +276,7 @@ namespace Aplikasi_Laundry
             this.Controls.Add(this.bttambah);
             this.Controls.Add(this.txid);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Pelanggan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pelanggan";
