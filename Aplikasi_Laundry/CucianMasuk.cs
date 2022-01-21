@@ -211,7 +211,7 @@ namespace Aplikasi_Laundry
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from Cucian_masuk where Id_cucian_masuk=@Id_cucian_masuk", con);
-            cmd.Parameters.AddWithValue("@Id_cucian_masuk", txidcm.Text);
+            cmd.Parameters.AddWithValue("@Id_cucian_masuk", txcari.Text);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -268,6 +268,11 @@ namespace Aplikasi_Laundry
         private void btreset_Click(object sender, EventArgs e)
         {
             reset();
+        }
+
+        private void btrefresh_Click(object sender, EventArgs e)
+        {
+            showdata();
         }
     }
 }

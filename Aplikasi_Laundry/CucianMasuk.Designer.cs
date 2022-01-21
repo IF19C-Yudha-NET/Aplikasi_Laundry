@@ -38,7 +38,7 @@ namespace Aplikasi_Laundry
             this.txhjenispaket = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btcari = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txcari = new System.Windows.Forms.TextBox();
             this.btreset = new System.Windows.Forms.Button();
             this.bthapus = new System.Windows.Forms.Button();
             this.btubah = new System.Windows.Forms.Button();
@@ -92,6 +92,7 @@ namespace Aplikasi_Laundry
             this.btrefresh.TabIndex = 101;
             this.btrefresh.Text = "Refresh";
             this.btrefresh.UseVisualStyleBackColor = true;
+            this.btrefresh.Click += new System.EventHandler(this.btrefresh_Click);
             // 
             // txidpel
             // 
@@ -152,12 +153,12 @@ namespace Aplikasi_Laundry
             this.btcari.UseVisualStyleBackColor = true;
             this.btcari.Click += new System.EventHandler(this.btcari_Click);
             // 
-            // textBox12
+            // txcari
             // 
-            this.textBox12.Location = new System.Drawing.Point(908, 321);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 26);
-            this.textBox12.TabIndex = 93;
+            this.txcari.Location = new System.Drawing.Point(908, 321);
+            this.txcari.Name = "txcari";
+            this.txcari.Size = new System.Drawing.Size(100, 26);
+            this.txcari.TabIndex = 93;
             // 
             // btreset
             // 
@@ -467,7 +468,7 @@ namespace Aplikasi_Laundry
             this.Controls.Add(this.txhjenispaket);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.btcari);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.txcari);
             this.Controls.Add(this.btreset);
             this.Controls.Add(this.bthapus);
             this.Controls.Add(this.btubah);
@@ -520,7 +521,7 @@ namespace Aplikasi_Laundry
         private System.Windows.Forms.TextBox txhjenispaket;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btcari;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txcari;
         private System.Windows.Forms.Button btreset;
         private System.Windows.Forms.Button bthapus;
         private System.Windows.Forms.Button btubah;
