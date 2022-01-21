@@ -135,6 +135,7 @@ namespace Aplikasi_Laundry
             this.btcari.TabIndex = 74;
             this.btcari.Text = "Cari";
             this.btcari.UseVisualStyleBackColor = true;
+            this.btcari.Click += new System.EventHandler(this.btcari_Click);
             // 
             // txcari
             // 

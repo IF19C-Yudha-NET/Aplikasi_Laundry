@@ -25,8 +25,7 @@ namespace Aplikasi_Laundry
             fom.Show();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O365U80\SQLEXPRESS;Initial Catalog=Laundry.v2;Integrated Security=True");
-
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-CJNVJPUI;Initial Catalog=Laundry.v2;Integrated Security=True");
         private void showdata()
         {
             con.Open();
@@ -112,6 +111,19 @@ namespace Aplikasi_Laundry
         private void btrefresh_Click(object sender, EventArgs e)
         {
             showdata();
+        }
+
+        private void btcari_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from Pencuci where Id_pencuci=@Id_pencuci", con);
+            cmd.Parameters.AddWithValue("@Id_pencuci", txcari.Text);
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dgvpencuci.DataSource = dt;
+            con.Close();
         }
     }
 }
