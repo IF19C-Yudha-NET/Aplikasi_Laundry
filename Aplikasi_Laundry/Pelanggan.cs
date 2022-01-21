@@ -34,6 +34,7 @@ namespace Aplikasi_Laundry
             txnama.Clear();
             txalamat.Clear();
             txnohp.Clear();
+            txcari.Clear();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -94,6 +95,7 @@ namespace Aplikasi_Laundry
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("data pelanggan berhasil dihapus");
+                reset();
                 showdata();
             }
             catch (Exception ex)
@@ -110,6 +112,7 @@ namespace Aplikasi_Laundry
 
         private void btrefresh_Click(object sender, EventArgs e)
         {
+            txcari.Clear();
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from Konsumen", con);
         

@@ -31,7 +31,6 @@ namespace Aplikasi_Laundry
         {
             this.label15 = new System.Windows.Forms.Label();
             this.btrefresh = new System.Windows.Forms.Button();
-            this.txidpel = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txhperkg = new System.Windows.Forms.TextBox();
             this.txhpwangi = new System.Windows.Forms.TextBox();
@@ -63,7 +62,6 @@ namespace Aplikasi_Laundry
             this.rdtidak = new System.Windows.Forms.RadioButton();
             this.rdya = new System.Windows.Forms.RadioButton();
             this.cbjeniscuci = new System.Windows.Forms.ComboBox();
-            this.txidpenc = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,6 +69,10 @@ namespace Aplikasi_Laundry
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.txnamapenc = new System.Windows.Forms.TextBox();
+            this.txnamapel = new System.Windows.Forms.TextBox();
+            this.combopenc = new System.Windows.Forms.ComboBox();
+            this.combopell = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcmasuk)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,17 +96,10 @@ namespace Aplikasi_Laundry
             this.btrefresh.UseVisualStyleBackColor = true;
             this.btrefresh.Click += new System.EventHandler(this.btrefresh_Click);
             // 
-            // txidpel
-            // 
-            this.txidpel.Location = new System.Drawing.Point(168, 155);
-            this.txidpel.Name = "txidpel";
-            this.txidpel.Size = new System.Drawing.Size(100, 26);
-            this.txidpel.TabIndex = 100;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(38, 161);
+            this.label11.Location = new System.Drawing.Point(16, 161);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(102, 20);
             this.label11.TabIndex = 99;
@@ -120,7 +115,7 @@ namespace Aplikasi_Laundry
             // 
             // txhpwangi
             // 
-            this.txhpwangi.Location = new System.Drawing.Point(295, 304);
+            this.txhpwangi.Location = new System.Drawing.Point(273, 304);
             this.txhpwangi.Name = "txhpwangi";
             this.txhpwangi.ReadOnly = true;
             this.txhpwangi.Size = new System.Drawing.Size(76, 26);
@@ -128,7 +123,7 @@ namespace Aplikasi_Laundry
             // 
             // txhjenispaket
             // 
-            this.txhjenispaket.Location = new System.Drawing.Point(334, 252);
+            this.txhjenispaket.Location = new System.Drawing.Point(312, 252);
             this.txhjenispaket.Name = "txhjenispaket";
             this.txhjenispaket.ReadOnly = true;
             this.txhjenispaket.Size = new System.Drawing.Size(76, 26);
@@ -321,7 +316,7 @@ namespace Aplikasi_Laundry
             // 
             // txhjeniscuci
             // 
-            this.txhjeniscuci.Location = new System.Drawing.Point(334, 202);
+            this.txhjeniscuci.Location = new System.Drawing.Point(312, 202);
             this.txhjeniscuci.Name = "txhjeniscuci";
             this.txhjeniscuci.ReadOnly = true;
             this.txhjeniscuci.Size = new System.Drawing.Size(76, 26);
@@ -333,7 +328,7 @@ namespace Aplikasi_Laundry
             this.cbjenispaket.Items.AddRange(new object[] {
             "Reguler (3 hari)",
             "Kilat (1 hari)"});
-            this.cbjenispaket.Location = new System.Drawing.Point(168, 252);
+            this.cbjenispaket.Location = new System.Drawing.Point(146, 252);
             this.cbjenispaket.Name = "cbjenispaket";
             this.cbjenispaket.Size = new System.Drawing.Size(160, 28);
             this.cbjenispaket.TabIndex = 73;
@@ -342,7 +337,7 @@ namespace Aplikasi_Laundry
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 260);
+            this.label5.Location = new System.Drawing.Point(16, 260);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 20);
             this.label5.TabIndex = 72;
@@ -351,7 +346,7 @@ namespace Aplikasi_Laundry
             // rdtidak
             // 
             this.rdtidak.AutoSize = true;
-            this.rdtidak.Location = new System.Drawing.Point(217, 308);
+            this.rdtidak.Location = new System.Drawing.Point(195, 308);
             this.rdtidak.Name = "rdtidak";
             this.rdtidak.Size = new System.Drawing.Size(72, 24);
             this.rdtidak.TabIndex = 71;
@@ -363,7 +358,7 @@ namespace Aplikasi_Laundry
             // rdya
             // 
             this.rdya.AutoSize = true;
-            this.rdya.Location = new System.Drawing.Point(157, 308);
+            this.rdya.Location = new System.Drawing.Point(135, 308);
             this.rdya.Name = "rdya";
             this.rdya.Size = new System.Drawing.Size(54, 24);
             this.rdya.TabIndex = 70;
@@ -378,23 +373,16 @@ namespace Aplikasi_Laundry
             this.cbjeniscuci.Items.AddRange(new object[] {
             "Cuci Kering",
             "Cuci Setrika"});
-            this.cbjeniscuci.Location = new System.Drawing.Point(168, 202);
+            this.cbjeniscuci.Location = new System.Drawing.Point(146, 202);
             this.cbjeniscuci.Name = "cbjeniscuci";
             this.cbjeniscuci.Size = new System.Drawing.Size(160, 28);
             this.cbjeniscuci.TabIndex = 69;
             this.cbjeniscuci.SelectedIndexChanged += new System.EventHandler(this.cbjeniscuci_SelectedIndexChanged);
             // 
-            // txidpenc
-            // 
-            this.txidpenc.Location = new System.Drawing.Point(168, 112);
-            this.txidpenc.Name = "txidpenc";
-            this.txidpenc.Size = new System.Drawing.Size(100, 26);
-            this.txidpenc.TabIndex = 68;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 314);
+            this.label4.Location = new System.Drawing.Point(16, 314);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 67;
@@ -403,7 +391,7 @@ namespace Aplikasi_Laundry
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 210);
+            this.label3.Location = new System.Drawing.Point(16, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 66;
@@ -412,7 +400,7 @@ namespace Aplikasi_Laundry
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 118);
+            this.label2.Location = new System.Drawing.Point(16, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 65;
@@ -420,7 +408,7 @@ namespace Aplikasi_Laundry
             // 
             // txidcm
             // 
-            this.txidcm.Location = new System.Drawing.Point(168, 68);
+            this.txidcm.Location = new System.Drawing.Point(146, 68);
             this.txidcm.Name = "txidcm";
             this.txidcm.Size = new System.Drawing.Size(100, 26);
             this.txidcm.TabIndex = 64;
@@ -428,7 +416,7 @@ namespace Aplikasi_Laundry
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 74);
+            this.label1.Location = new System.Drawing.Point(16, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 20);
             this.label1.TabIndex = 63;
@@ -453,15 +441,52 @@ namespace Aplikasi_Laundry
             this.label16.TabIndex = 103;
             this.label16.Text = "DATA CUCIAN MASUK";
             // 
+            // txnamapenc
+            // 
+            this.txnamapenc.Location = new System.Drawing.Point(263, 112);
+            this.txnamapenc.Name = "txnamapenc";
+            this.txnamapenc.ReadOnly = true;
+            this.txnamapenc.Size = new System.Drawing.Size(142, 26);
+            this.txnamapenc.TabIndex = 104;
+            // 
+            // txnamapel
+            // 
+            this.txnamapel.Location = new System.Drawing.Point(263, 155);
+            this.txnamapel.Name = "txnamapel";
+            this.txnamapel.ReadOnly = true;
+            this.txnamapel.Size = new System.Drawing.Size(142, 26);
+            this.txnamapel.TabIndex = 105;
+            // 
+            // combopenc
+            // 
+            this.combopenc.FormattingEnabled = true;
+            this.combopenc.Location = new System.Drawing.Point(146, 112);
+            this.combopenc.Name = "combopenc";
+            this.combopenc.Size = new System.Drawing.Size(94, 28);
+            this.combopenc.TabIndex = 107;
+            this.combopenc.SelectedIndexChanged += new System.EventHandler(this.combopenc_SelectedIndexChanged);
+            // 
+            // combopell
+            // 
+            this.combopell.FormattingEnabled = true;
+            this.combopell.Location = new System.Drawing.Point(146, 153);
+            this.combopell.Name = "combopell";
+            this.combopell.Size = new System.Drawing.Size(94, 28);
+            this.combopell.TabIndex = 108;
+            this.combopell.SelectedIndexChanged += new System.EventHandler(this.combopell_SelectedIndexChanged);
+            // 
             // CucianMasuk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1113, 659);
+            this.Controls.Add(this.combopell);
+            this.Controls.Add(this.combopenc);
+            this.Controls.Add(this.txnamapel);
+            this.Controls.Add(this.txnamapenc);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btrefresh);
-            this.Controls.Add(this.txidpel);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txhperkg);
             this.Controls.Add(this.txhpwangi);
@@ -493,7 +518,6 @@ namespace Aplikasi_Laundry
             this.Controls.Add(this.rdtidak);
             this.Controls.Add(this.rdya);
             this.Controls.Add(this.cbjeniscuci);
-            this.Controls.Add(this.txidpenc);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -514,7 +538,6 @@ namespace Aplikasi_Laundry
 
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btrefresh;
-        private System.Windows.Forms.TextBox txidpel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txhperkg;
         private System.Windows.Forms.TextBox txhpwangi;
@@ -546,7 +569,6 @@ namespace Aplikasi_Laundry
         private System.Windows.Forms.RadioButton rdtidak;
         private System.Windows.Forms.RadioButton rdya;
         private System.Windows.Forms.ComboBox cbjeniscuci;
-        private System.Windows.Forms.TextBox txidpenc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -554,5 +576,9 @@ namespace Aplikasi_Laundry
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txnamapenc;
+        private System.Windows.Forms.TextBox txnamapel;
+        private System.Windows.Forms.ComboBox combopenc;
+        private System.Windows.Forms.ComboBox combopell;
     }
 }

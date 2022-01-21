@@ -26,6 +26,7 @@ namespace Aplikasi_Laundry
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-CJNVJPUI;Initial Catalog=Laundry.v2;Integrated Security=True");
+        
         private string idCucianMasuk
         {
             get
@@ -38,6 +39,7 @@ namespace Aplikasi_Laundry
                 if (rd[0].ToString() != "")
                     cm = "CM-" + (int.Parse(rd[0].ToString()) + 1).ToString("0");
                 rd.Close();
+                con.Close();
                 return cm;
             }
         }
@@ -45,20 +47,25 @@ namespace Aplikasi_Laundry
 
         private void showdata()
         {
-
-            SqlCommand cmd = new SqlCommand("select * from Cucian_masuk", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dgvcmasuk.DataSource = dt;
-            con.Close();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select * from Cucian_masuk", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvcmasuk.DataSource = dt;
+                con.Close();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("masuk kembali untuk refresh");
+            }
         }
 
         private void reset()
         {
             txidcm.Clear();
-            txidpenc.Clear();
-            txidpel.Clear();
+            combopenc.SelectedItem=null;
+            combopell.SelectedItem=null;
             txhpwangi.Clear();
             txhjenispaket.Clear();
             txhjeniscuci.Clear();
@@ -67,15 +74,53 @@ namespace Aplikasi_Laundry
             txjmlpakaian.Clear();
             txjmllainya.Clear();
             txhpwangi.Clear();
-            // rdya.Checked == false;
+            txnamapenc.Clear();
+            txnamapenc.Clear();
             rdtidak.Checked = false;
             cbjeniscuci.SelectedItem = false;
-            //cbjenispaket.SelectedItem = f;
-            //tglpengembalian.Text = tgldilaundry.Text;
+            
+        }
+
+        private void idpencuci()
+        {
+            
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Id_pencuci from Pencuci";
+            DataSet ds1 = new DataSet();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(ds1, "Pencuci");
+            combopenc.DataSource = ds1.Tables["Pencuci"];
+            combopenc.DisplayMember = "Id_pencuci";
+            combopenc.SelectedItem = null;
+            con.Close();
+            
+        }
+
+        private void idpelanggan()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Id_pelanggan from Konsumen";
+            DataSet ds1 = new DataSet();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(ds1, "Konsumen");
+            combopell.DataSource = ds1.Tables["Konsumen"];
+            combopell.DisplayMember = "Id_pelanggan";
+            combopell.SelectedItem = null;         
+            con.Close();
         }
 
         private void CucianMasuk_Load(object sender, EventArgs e)
         {
+            txcari.Text = "CM-";
+            idpencuci();
+            idpelanggan();
+            txnamapel.Clear();
+            txnamapenc.Clear();
+
             txidcm.Text = idCucianMasuk;
             try
             {
@@ -93,11 +138,13 @@ namespace Aplikasi_Laundry
                 MessageBox.Show("harga belum ditetapkan !!!" +
                                 "\nharap ditetapkan dahulu di harga");
             }
+
+           
         }
 
         private void bttambah_Click(object sender, EventArgs e)
         {
-            if (txidcm.Text == "" | txidpenc.Text == "" | txidcm.Text == "" | txjmlpakaian.Text == "" | txjmlcelana.Text == "" | txjmllainya.Text == "" | txberat.Text == "")
+            if (txidcm.Text == "" | combopenc.Text == "" | txidcm.Text == "" | txjmlpakaian.Text == "" | txjmlcelana.Text == "" | txjmllainya.Text == "" | txberat.Text == "")
             {
                 MessageBox.Show("harap diisi semua");
             }
@@ -112,8 +159,8 @@ namespace Aplikasi_Laundry
                 con.Open();
                 SqlCommand cmd = new SqlCommand("insert into Cucian_masuk values (@Id_cucian_masuk,@Id_pencuci,@Id_pelanggan,@Jenis_cuci,@Paket_cuci,@Pewangi,@Jml_pakaian,@Jml_celana,@Jml_lainnya,@Harga_per_kg,@Berat,@Total_harga,@Tgl_masuk,@Tgl_pengembalian)", con);
                 cmd.Parameters.AddWithValue("@Id_cucian_masuk", txidcm.Text);
-                cmd.Parameters.AddWithValue("@Id_pencuci", txidpenc.Text);
-                cmd.Parameters.AddWithValue("@Id_pelanggan", txidpel.Text);
+                cmd.Parameters.AddWithValue("@Id_pencuci", combopenc.Text);
+                cmd.Parameters.AddWithValue("@Id_pelanggan", combopell.Text);
                 cmd.Parameters.AddWithValue("@Jenis_cuci", cbjeniscuci.Text);
                 cmd.Parameters.AddWithValue("@Paket_cuci", cbjenispaket.Text);
                 cmd.Parameters.AddWithValue("@Pewangi", pewangi);
@@ -129,7 +176,7 @@ namespace Aplikasi_Laundry
 
                 SqlCommand cmd2 = new SqlCommand("insert into Pengembalian values (@Id_cucian_masuk,@Id_pelanggan,@Berat,@Harga,@Tgl_pengembalian)", con);
                 cmd2.Parameters.AddWithValue("@Id_cucian_masuk", txidcm.Text);
-                cmd2.Parameters.AddWithValue("@Id_pelanggan", txidpel.Text);
+                cmd2.Parameters.AddWithValue("@Id_pelanggan", combopell.Text);
                 cmd2.Parameters.AddWithValue("@Berat", berat);
                 cmd2.Parameters.AddWithValue("@Harga", totalharga);
                 cmd2.Parameters.AddWithValue("@Tgl_pengembalian", tglpengembalian.Text);
@@ -221,7 +268,7 @@ namespace Aplikasi_Laundry
 
         private void btubah_Click(object sender, EventArgs e)
         {
-            if (txidcm.Text == "" | txidpenc.Text == "" | txidcm.Text == "" | txjmlpakaian.Text == "" | txjmlcelana.Text == "" | txjmllainya.Text == "" | txberat.Text == "")
+            if (txidcm.Text == "" | combopenc.Text == "" | txidcm.Text == "" | txjmlpakaian.Text == "" | txjmlcelana.Text == "" | txjmllainya.Text == "" | txberat.Text == "")
             {
                 MessageBox.Show("harap diisi semua");
             }
@@ -236,8 +283,8 @@ namespace Aplikasi_Laundry
                 con.Open();
                 SqlCommand cmd = new SqlCommand("update Cucian_masuk set  Id_pencuci=@Id_pencuci,Id_pelanggan=@Id_pelanggan,Jenis_cuci=@Jenis_cuci,Paket_cuci=@Paket_cuci,Pewangi=@Pewangi,Jml_pakaian=@Jml_pakaian,Jml_celana=@Jml_celana,Jml_lainnya=@Jml_lainnya,Harga_per_kg=@Harga_per_kg,Berat=@Berat,Total_harga=@Total_harga,Tgl_masuk=@Tgl_masuk,Tgl_pengembalian=@Tgl_pengembalian where Id_cucian_masuk=@Id_cucian_masuk", con);
                 cmd.Parameters.AddWithValue("@Id_cucian_masuk", txidcm.Text);
-                cmd.Parameters.AddWithValue("@Id_pencuci", txidpenc.Text);
-                cmd.Parameters.AddWithValue("@Id_pelanggan", txidpel.Text);
+                cmd.Parameters.AddWithValue("@Id_pencuci", combopenc.Text);
+                cmd.Parameters.AddWithValue("@Id_pelanggan", combopell.Text);
                 cmd.Parameters.AddWithValue("@Jenis_cuci", cbjeniscuci.Text);
                 cmd.Parameters.AddWithValue("@Paket_cuci", cbjenispaket.Text);
                 cmd.Parameters.AddWithValue("@Pewangi", pewangi);
@@ -253,7 +300,7 @@ namespace Aplikasi_Laundry
 
                 SqlCommand cmd2 = new SqlCommand("update Pengembalian set Id_cucian_masuk=@Id_cucian_masuk,Berat=@Berat,Harga=@Harga,Tgl_pengembalian=@Tgl_pengembalian where Id_pelanggan=@Id_pelanggan", con);
                 cmd2.Parameters.AddWithValue("@Id_cucian_masuk", txidcm.Text);
-                cmd2.Parameters.AddWithValue("@Id_pelanggan", txidpel.Text);
+                cmd2.Parameters.AddWithValue("@Id_pelanggan", combopell.Text);
                 cmd2.Parameters.AddWithValue("@Berat", berat);
                 cmd2.Parameters.AddWithValue("@Harga", totalharga);
                 cmd2.Parameters.AddWithValue("@Tgl_pengembalian", tglpengembalian.Text);
@@ -267,12 +314,56 @@ namespace Aplikasi_Laundry
 
         private void btreset_Click(object sender, EventArgs e)
         {
+            txcari.Clear();
             reset();
         }
 
         private void btrefresh_Click(object sender, EventArgs e)
         {
+            txcari.Text = "CM-";
             showdata();
+        }
+
+        private void txidpenc_TextChanged(object sender, EventArgs e)
+        {
+          
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void combopenc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            con.Close();
+            SqlCommand cmd = new SqlCommand("select*from Pencuci where Id_pencuci='" + combopenc.Text + "'", con);
+            con.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+                txnamapenc.Text = rd[1].ToString();
+                rd.Close();
+                con.Close();
+            }
+        }
+
+        private void combopell_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            con.Close();
+            SqlCommand cmd = new SqlCommand("select*from Konsumen where Id_pelanggan='" + combopell.Text + "'", con);
+            con.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+                txnamapel.Text = rd[1].ToString();
+                rd.Close();
+                con.Close();
+            }
         }
     }
 }

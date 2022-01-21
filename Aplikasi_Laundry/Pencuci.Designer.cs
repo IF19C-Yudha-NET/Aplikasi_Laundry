@@ -67,7 +67,7 @@ namespace Aplikasi_Laundry
             // 
             // btrefresh
             // 
-            this.btrefresh.Location = new System.Drawing.Point(522, 271);
+            this.btrefresh.Location = new System.Drawing.Point(409, 271);
             this.btrefresh.Name = "btrefresh";
             this.btrefresh.Size = new System.Drawing.Size(91, 42);
             this.btrefresh.TabIndex = 80;
@@ -110,7 +110,7 @@ namespace Aplikasi_Laundry
             // 
             // btreset
             // 
-            this.btreset.Location = new System.Drawing.Point(62, 271);
+            this.btreset.Location = new System.Drawing.Point(523, 271);
             this.btreset.Name = "btreset";
             this.btreset.Size = new System.Drawing.Size(91, 42);
             this.btreset.TabIndex = 76;
@@ -156,7 +156,7 @@ namespace Aplikasi_Laundry
             // 
             // bthapus
             // 
-            this.bthapus.Location = new System.Drawing.Point(401, 271);
+            this.bthapus.Location = new System.Drawing.Point(288, 271);
             this.bthapus.Name = "bthapus";
             this.bthapus.Size = new System.Drawing.Size(91, 42);
             this.bthapus.TabIndex = 71;
@@ -166,7 +166,7 @@ namespace Aplikasi_Laundry
             // 
             // btubah
             // 
-            this.btubah.Location = new System.Drawing.Point(285, 271);
+            this.btubah.Location = new System.Drawing.Point(172, 271);
             this.btubah.Name = "btubah";
             this.btubah.Size = new System.Drawing.Size(91, 42);
             this.btubah.TabIndex = 70;
@@ -224,7 +224,7 @@ namespace Aplikasi_Laundry
             // 
             // bttambah
             // 
-            this.bttambah.Location = new System.Drawing.Point(174, 271);
+            this.bttambah.Location = new System.Drawing.Point(61, 271);
             this.bttambah.Name = "bttambah";
             this.bttambah.Size = new System.Drawing.Size(91, 42);
             this.bttambah.TabIndex = 63;

@@ -65,6 +65,7 @@ namespace Aplikasi_Laundry
 
         private void btreset_Click(object sender, EventArgs e)
         {
+            txcari.Clear();
             reset();
         }
 
@@ -104,12 +105,14 @@ namespace Aplikasi_Laundry
             cmd.Parameters.AddWithValue("@Id_pencuci", txidpen.Text);
             cmd.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show("data pelanggan berhasil dihapus");
+            MessageBox.Show("data pencuci berhasil dihapus");
+            reset();
             showdata();
         }
 
         private void btrefresh_Click(object sender, EventArgs e)
         {
+            txcari.Clear();
             showdata();
         }
 

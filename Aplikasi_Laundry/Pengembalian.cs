@@ -37,6 +37,8 @@ namespace Aplikasi_Laundry
         }
         private void Pengembalian_Load(object sender, EventArgs e)
         {
+            txcari.Text = "CM-";
+            txidcm.Text = "CM-";
             showdata();
         }
 
@@ -96,6 +98,7 @@ namespace Aplikasi_Laundry
 
         private void btrefresh_Click(object sender, EventArgs e)
         {
+            txcari.Text= "CM-";
             showdata();
         }
     }

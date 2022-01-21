@@ -39,6 +39,7 @@ namespace Aplikasi_Laundry
 
         private void CucianKeluar_Load(object sender, EventArgs e)
         {
+            txcari.Text = "CM-";
             showdata();
         }
 
