@@ -37,6 +37,14 @@ namespace Aplikasi_Laundry
             con.Close();
         }
 
+        private void reset()
+        {
+            txhkg.Clear();
+            txhpkilat.Clear();
+            txhwangi.Clear();
+            txcsetrika.Clear();
+        }
+
         private void bttetapkan_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -48,6 +56,7 @@ namespace Aplikasi_Laundry
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("harga berhasil ditetapkan");
+            reset();
             showdata();
         }
 
@@ -67,6 +76,7 @@ namespace Aplikasi_Laundry
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("harga berhasil diubah");
+            reset();
             showdata();
         }
 
