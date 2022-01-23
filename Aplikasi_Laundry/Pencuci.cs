@@ -60,7 +60,7 @@ namespace Aplikasi_Laundry
 
         private void rdp_CheckedChanged(object sender, EventArgs e)
         {
-            gender = "Laki-laki";
+            gender = "Perempuan";
         }
 
         private void btreset_Click(object sender, EventArgs e)
